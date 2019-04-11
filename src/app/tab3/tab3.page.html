@@ -6,4 +6,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-list-header>
+    <ion-label>List Heroes</ion-label>
+  </ion-list-header>
+  <ion-list *ngFor="let hero of heroes">
+    <ion-item>
+      <ion-label (click)="alertNameHero(hero.name)">{{ hero.id }} - {{ hero.name }} - {{ hero.power }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
