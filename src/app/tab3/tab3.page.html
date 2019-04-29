@@ -6,7 +6,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<!--<ion-content>
   <ion-list-header>
     <ion-label>List Heroes</ion-label>
   </ion-list-header>
@@ -15,4 +15,16 @@
       <ion-label (click)="alertNameHero(hero.name)">{{ hero.id }} - {{ hero.name }} - {{ hero.power }}</ion-label>
     </ion-item>
   </ion-list>
+</ion-content>-->
+<ion-content>
+  <ion-card *ngFor="let movie of moviesLatest">
+    <ion-card-header>
+      <img [src]="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path">
+      <ion-card-title>{{ movie.original_title }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content style="text-align: justify">
+    {{ movie.overview }}
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -13,4 +13,8 @@ export class SharedService {
   getHeroes(): Observable<Hero[]> {
     return this.httpClient.get<Hero[]>(environment.heroes.all);
   }
+
+  getMoviesLatest(): Observable<any[]> {
+    return this.httpClient.get<any[]>(environment.movies.popular);
+  }
 }

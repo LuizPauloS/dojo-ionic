@@ -11,17 +11,26 @@ import { Hero } from './../shared/model/Hero';
 export class Tab3Page implements OnInit {
 
   heroes: Hero[];
+  moviesLatest: any[];
 
   constructor(private sharedService: SharedService) {}
 
   ngOnInit() {
     this.heroes = [];
-    this.getHeroesApi();
+    this.moviesLatest = [];
+    // this.getHeroesApi();
+    this.getMoviesLatest();
   }
 
   getHeroesApi() {
     this.sharedService.getHeroes().subscribe(response => {
       this.heroes = response;
+    });
+  }
+
+  getMoviesLatest() {
+    this.sharedService.getMoviesLatest().subscribe((response: any) => {
+      this.moviesLatest = response.results;
     });
   }
 
