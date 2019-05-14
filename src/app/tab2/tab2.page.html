@@ -1,9 +1,18 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Lista Avatar
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-list *ngFor="let movie of movies" >
+    <ion-item>
+        <ion-avatar slot="start">
+          <img [src]="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path">
+        </ion-avatar>
+      <ion-label>{{ movie.title }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
