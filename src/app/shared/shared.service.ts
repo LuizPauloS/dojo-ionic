@@ -17,4 +17,9 @@ export class SharedService {
   getMoviesLatest(): Observable<any[]> {
     return this.httpClient.get<any[]>(environment.movies.popular);
   }
+
+  findMovieById(id: number): Observable<any> {
+    const urlMovie = `${environment.movies.popular}&${id}`;
+    return this.httpClient.get<any>(urlMovie);
+  }
 }

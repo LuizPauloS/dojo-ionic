@@ -2,6 +2,7 @@ import { SharedService } from './../shared/shared.service';
 import { Component, OnInit } from '@angular/core';
 
 import { Hero } from './../shared/model/Hero';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab3',
@@ -13,7 +14,8 @@ export class Tab3Page implements OnInit {
   heroes: Hero[];
   moviesLatest: any[];
 
-  constructor(private sharedService: SharedService) {}
+  constructor(private router: Router,
+              private sharedService: SharedService) {}
 
   ngOnInit() {
     this.heroes = [];
@@ -36,5 +38,10 @@ export class Tab3Page implements OnInit {
 
   alertNameHero(name: string): void {
     alert('HERO ESCOLHIDO ' + name);
+  }
+
+  teste(id: number): void {
+    console.log('CLICOU NO FILME ' + id);
+    //this.router.navigate(['/detail/' + id ]);
   }
 }
