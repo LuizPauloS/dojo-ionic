@@ -1,9 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>list</ion-title>
+    <ion-title>LIST MOVIES</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card *ngFor="let movie of moviesLatest" (click)="teste(movie.id)" routerLink='/movie/detail/{{movie.id}}'>
+    <ion-card-header>
+      <img [src]="'https://image.tmdb.org/t/p/w500' + movie?.backdrop_path">
+      <ion-card-title>{{ movie.original_title }}</ion-card-title>
+    </ion-card-header>
 
+    <!--<ion-card-content style="text-align: justify">
+    {{ movie.overview }}
+    </ion-card-content>-->
+  </ion-card>
 </ion-content>

@@ -1,9 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>detail</ion-title>
+    <ion-title>DETAIL MOVIE</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-card-header>
+      <img [src]="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path">
+      <ion-card-title>{{ movie.original_title }}</ion-card-title>
+    </ion-card-header>
 
+    <ion-card-content style="text-align: justify">
+    {{ movie.overview }}
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let movie of moviesLatest" (click)="teste(movie.id)" routerLink='/detail/{{movie.id}}'>
+  <ion-card *ngFor="let movie of moviesLatest" (click)="teste(movie.id)" routerLink='/movie'>
     <ion-card-header>
       <img [src]="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path">
       <ion-card-title>{{ movie.original_title }}</ion-card-title>

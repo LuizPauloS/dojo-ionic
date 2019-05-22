@@ -42,6 +42,6 @@ export class Tab3Page implements OnInit {
 
   teste(id: number): void {
     console.log('CLICOU NO FILME ' + id);
-    //this.router.navigate(['/detail/' + id ]);
+    //this.router.navigate(['/detail']);
   }
 }

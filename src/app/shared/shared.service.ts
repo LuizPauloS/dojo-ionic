@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment, apiKeyV3, portuguesBR } from 'src/environments/environment';
 
 @Injectable()
 export class SharedService {
@@ -19,7 +19,8 @@ export class SharedService {
   }
 
   findMovieById(id: number): Observable<any> {
-    const urlMovie = `${environment.movies.popular}&${id}`;
+    const urlMovie = `${environment.movies.movie}/${id}${apiKeyV3}${portuguesBR}`;
+    console.log('URL -> ' + urlMovie);
     return this.httpClient.get<any>(urlMovie);
   }
 }
