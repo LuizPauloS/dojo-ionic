@@ -1,6 +1,7 @@
-import { SharedService } from './../../shared/shared.service';
-import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+
+import { SharedService } from './../../shared/shared.service';
 
 @Component({
   selector: 'app-detail',
@@ -23,6 +24,8 @@ export class DetailPage implements OnInit {
       this.movie = response;
       console.log('Filme encontrado');
       console.log(response);
+    }, err => {
+      console.error('ERRO: ' + err);
     });
   }
 

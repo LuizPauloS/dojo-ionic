@@ -1,7 +1,8 @@
-import { Hero } from './../../shared/model/Hero';
-import { Component, OnInit } from '@angular/core';
-import { SharedService } from 'src/app/shared/shared.service';
 import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+
+import { Hero } from './../../shared/model/Hero';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-list',
