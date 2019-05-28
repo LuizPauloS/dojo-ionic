@@ -12,10 +12,12 @@ export class DetailPage implements OnInit {
   movie: any = {};
 
   constructor(private sharedService: SharedService,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute) { 
+                this.movie = this.activatedRoute.snapshot.data['movieDetail'];
+              }
 
   ngOnInit() {
-    this.initMovieById();
+    //this.initMovieById();
   }
 
   initMovieById(): void {

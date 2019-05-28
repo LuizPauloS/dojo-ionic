@@ -1,3 +1,4 @@
+import { MovieResolverService } from './movie-resolver.service';
 import { NewPage } from './new/new.page';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -21,5 +22,8 @@ import { DetailPage } from './detail/detail.page';
     FormsModule,
     RouterModule.forChild(MovieRoutes)
   ],
+  providers: [
+    MovieResolverService
+  ]
 })
 export class MovieModule { }
