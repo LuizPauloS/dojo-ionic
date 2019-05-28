@@ -1,5 +1,6 @@
 import { Hero } from './model/Hero';
 import { Injectable } from '@angular/core';
+import { Storage } from '@ionic/storage';
 
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -8,7 +9,8 @@ import { environment, apiKeyV3, portuguesBR } from 'src/environments/environment
 @Injectable()
 export class SharedService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient,
+              private storage: Storage) { }
 
   getHeroes(): Observable<Hero[]> {
     return this.httpClient.get<Hero[]>(environment.heroes.all);
@@ -22,5 +24,9 @@ export class SharedService {
     const urlMovie = `${environment.movies.movie}/${id}${apiKeyV3}${portuguesBR}`;
     console.log('URL -> ' + urlMovie);
     return this.httpClient.get<any>(urlMovie);
+  }
+
+  getDataBase() {
+    // return this.storage.driver()
   }
 }
